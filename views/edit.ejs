@@ -1,0 +1,23 @@
+<%include ./partials/header.ejs%>
+
+
+<div class='ui main text container segment spacer-top'>
+    <div class='ui huge header'>Edit Blog</div>
+    <form action='/blogs/<%=blog._id%>?_method=PUT' method='POST' class='ui form'> 
+
+        <div class='feild'>
+            <label>Title</label>
+            <input type='text' name='blog[title]' placeholder='title' value='<%=blog.title%>'required>
+        </div>
+        <div class='feild'>
+            <label>Image URL</label>
+            <input type='text' name='blog[url]'   placeholder='Image URL' value='<%=blog.url%>' required>
+        </div>
+        <div class='feild'>
+            <label>Post</label>
+            <textarea name='blog[post]' required><%=blog.post%></textarea>
+        </div>
+        <input type='submit' class='ui green basic big button'>
+    </form>
+</div>
+<%include ./partials/footer.ejs%>

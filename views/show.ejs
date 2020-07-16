@@ -1,0 +1,35 @@
+<% include ./partials/header.ejs%>
+
+<div class='ui inverted pointing top fixed menu'>
+	<div class=' item'>
+		<h1 class='header'><i class="coffee icon"></i>BlogSite</h1> 
+	</div>
+	<a href="#" class='header item'>Home</a>
+	<a href="/blogs" class='header item'>Blogs</a>
+	<a href="/blogs/new" class='header item'>New Blog</a>
+	<div class='right menu'>
+	<a href="#" class='header ui item'>Login</a>
+	</div>
+</div>
+
+
+<div class='spacer-top ui main text container segment '>
+    <div class='ui huge centered header '>
+        <h1><%=blog.title%></h1>
+    </div>
+    <div class='item'>
+        <img src='<%=blog.url%>' class='ui medium centered rounded image'>
+        <div class='content'>
+            <span><%=blog.created.toDateString()%></span>
+            <span>
+                <a href='/blogs/<%=blog._id%>/edit' class='edit-btn' ><i class="edit icon"></i></a>
+                <form action='/blogs/<%=blog._id%>?_method=DELETE' method="POST" class='del-form'>
+                    <button type='submit' class='del-btn'><i class="trash alternate outline icon"></i></button>
+                </form>
+            </span>
+            <p><%-blog.post%></p>
+        </div>
+    </div>   
+</div>
+
+<% include ./partials/footer.ejs%>

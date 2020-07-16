@@ -1,0 +1,32 @@
+<%include ./partials/header.ejs%>
+<div class='ui inverted pointing top fixed menu'>
+	<div class=' item'>
+		<h1 class='header'><i class="coffee icon"></i>BlogSite</h1>
+	</div>
+	<a href="#" class='header item'>Home</a>
+	<a href="/blogs" class='header item'>Blogs</a>
+	<a href="/blogs/new" class='header item active'>New Blog</a>
+	<div class='right menu'>
+	<a href="#" class='header ui item'>Login</a>
+	</div>
+</div>
+
+<div class='ui main text container segment spacer-top'>
+    <div class='ui huge header'>New Blog</div>
+    <form action='/blogs' method='POST' class='ui form'>
+        <div class='feild'>
+            <label>Title</label>
+            <input type='text' name='blog[title]' placeholder='title'required>
+        </div>
+        <div class='feild'>
+            <label>Image URL</label>
+            <input type='text' name='blog[url]'   placeholder='Image URL'required>
+        </div>
+        <div class='feild'>
+            <label>Title</label>
+            <textarea name='blog[post]' required ></textarea>
+        </div>
+        <input type='submit' class='ui green basic big button'>
+    </form>
+</div>
+<%include ./partials/footer.ejs %>

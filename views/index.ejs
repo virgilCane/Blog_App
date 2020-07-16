@@ -1,0 +1,36 @@
+<%include ./partials/header.ejs%>
+
+<div class='ui inverted pointing top fixed menu'>
+	<div class=' item'>
+		<h1 class='header'><i class="coffee icon"></i>BlogSite</h1>
+	</div>
+	<a href="#" class='header item'>Home</a>
+	<a href="/blogs" class='header item active'>Blogs</a>
+	<a href="/blogs/new" class='header item'>New Blog</a>
+	<div class='right menu'>
+	<a href="#" class='header ui item'>Login</a>
+	</div>
+</div>
+
+
+<h1>This is the index page</h1>
+
+<%blogs.forEach((blog)=>{ %>
+	<div class='ui main text container segment'>
+		<div class='ui centered huge header'>
+			<h1><a class = 'header' href='/blogs/<%=blog._id%>'><%=blog.title%></a></h1>
+		</div>
+		<div class='item'>
+			<img src="<%=blog.url%>" class='ui big centered rounded image'>
+			<div class='content'>
+			<div class='meta'>
+			<span><%=blog.created.toDateString()%></span>
+			</div>
+			
+			<p><%-blog.post.substring(0,100)%>...</p>
+			<a href='/blogs/<%=blog._id%>'>Read More</a>
+			</div>
+		</div>
+	</div>
+<%});%>
+<%include ./partials/footer.ejs%>

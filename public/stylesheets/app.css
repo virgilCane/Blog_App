@@ -1,0 +1,44 @@
+html,body{
+    background-image: URL('../img/papyrus-dark.png');
+}
+i.icon {
+    font-size: 0.8em;
+}
+div .feild {
+    margin: 0.3em
+}
+.spacer-top.main.text {
+    margin-top: 8em; 
+}
+img.main-display{
+    max-width: 2vw;
+    max-height: auto;
+}
+.edit-btn{
+    text-decoration: none;
+    color:gray;
+    text-size-adjust: auto;
+    font-size: 1.5em;
+    margin-left:85%;
+}
+.del-btn{
+    background: none;
+    font:inherit;
+    border:none;
+    outline:inherit;
+    color:gray;
+    display: inline;
+    font-size: 1.4em;
+}
+.del-btn:hover{
+    color:red;
+}
+.del-form{
+    display: inline;
+}
+a.header{
+    color: inherit;
+}
+div.meta{
+    color: gray;
+}
